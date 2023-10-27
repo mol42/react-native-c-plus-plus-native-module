@@ -46,6 +46,9 @@ target 'CxxTurboModulesGuide' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  # C++ Turbo Native module related setting
+  pod 'AppTurboModules', :path => "./../tm"
+
   target 'CxxTurboModulesGuideTests' do
     inherit! :complete
     # Pods for testing

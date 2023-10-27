@@ -25,6 +25,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import NativeSampleModule from './tm/NativeSampleModule';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -76,6 +78,16 @@ function App(): JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <Section title="Cxx TurboModule">
+            <Text style={styles.highlight}>
+              NativeSampleModule.reverseString of "the quick brown fox jumps
+              over the lazy dog" :
+            </Text>
+            {NativeSampleModule.reverseString(
+              'the quick brown fox jumps over the lazy dog ',
+            )}
+          </Section>
+
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
